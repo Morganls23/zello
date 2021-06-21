@@ -1,6 +1,6 @@
 //p14C Variables
 const environmentID = '9bd28128-9847-4a8e-8963-92e2a52fc181'; // env ID from p1 console
-const baseUrl = 'https://morgdemo.ping-eng.com/zello'; //Where this app is hosted --> No trailing slash needed
+const baseUrl = 'https://facile-zello.ping-devops.com/zello'; //Where this app is hosted --> No trailing slash needed
 
 const workerClientID = 'd63f68d6-57b3-4992-b0c0-98d87b96a61c'; //used to create/manage users
 //const workerClientSecret = 'UYPFyy6jOIL8HPKTqDgtmz.uqTNyrhP7MY63kMUgqq_G3~VzIuV.qU2sREl86TiO';
@@ -22,7 +22,7 @@ const logoutUrl = baseUrl + '/logout/'; // whitelisted url to send a person who 
 const redirectUri = baseUrl + '/login.html'; // whitelisted url P14C sends the token or code to
 const adminRedirect = baseUrl +'/adminlogon.html'; //redirect uri for admin
 
-const authUrl = 'https://auth.pingone.com';
+const authUrl = 'https://facile-zello.ping-devops.com';
 const apiUrl = 'https://api.pingone.com/v1';
 
 var flowId = '';

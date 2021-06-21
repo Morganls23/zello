@@ -50,6 +50,11 @@ function initiateLogon(){
   location.href = authorizationUrl;
 }
 
+function redirect_IDfirst(){
+  idredirect = authorizationUrl + 'acr_values=UserAuth'
+  location.href = idredirect;
+}
+
 
   // function finishLogon(url){
   //     //get to redirect to get user info 

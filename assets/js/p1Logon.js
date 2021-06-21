@@ -223,9 +223,9 @@ function getNextStep(flowID){
         $('#idfirst').show();
         break;
       case 'EXTERNAL_AUTHENTICATION_REQUIRED':
+        console.log('extenral auth required');
         window.location.replace(data._embedded.identityProvider._links.authenticate.href);
         break;
-
       case 'VERIFICATION_CODE_REQUIRED':
         console.log('Rendering Verification code form');
         $('#loginDiv').hide();

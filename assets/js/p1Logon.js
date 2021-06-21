@@ -27,28 +27,28 @@ const authorizationUrl =
   }
 
 //----initate logon ---- //
-// function initiateLogon() {
-//     console.log('initiateLogon called')
-//     let url = authorizationUrl;
-//     let method = 'GET'
-//     $.ajax({
-//       url: url,
-//       method: method
-//     })
-//     .done(function(data) {
-//       nextStep(data);
-//     })
-//     .fail(function(data) {
-//       console.log('ajax call failed');
-//       console.log(data);
-//       $('#warningMessage').text(data.responseJSON.details[0].message);
-//       $('#warningDiv').show();
-//     });
-//   }
+function initiateLogon() {
+    console.log('initiateLogon called')
+    let url = authorizationUrl;
+    let method = 'GET'
+    $.ajax({
+      url: url,
+      method: method
+    })
+    .done(function(data) {
+      nextStep(data);
+    })
+    .fail(function(data) {
+      console.log('ajax call failed');
+      console.log(data);
+      $('#warningMessage').text(data.responseJSON.details[0].message);
+      $('#warningDiv').show();
+    });
+  }
 
-function initiateLogon(){
-  location.href = authorizationUrl;
-}
+// function initiateLogon(){
+//   location.href = authorizationUrl;
+// }
 
 function redirect_IDfirst(){
   idredirect = authorizationUrl + '&acr_values=UserAuth'

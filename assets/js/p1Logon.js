@@ -11,10 +11,8 @@ const authorizationUrl =
   '&redirect_uri=' +
   redirectUri +
   '&scope=' +
-  scopes;
-  
-  //+
-  //'&response_mode=pi.flow';
+  scopes +
+  '&response_mode=pi.flow';
 
 
 

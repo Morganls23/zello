@@ -51,7 +51,7 @@ function initiateLogon(){
 }
 
 function redirect_IDfirst(){
-  idredirect = authorizationUrl + 'acr_values=UserAuth'
+  idredirect = authorizationUrl + '&acr_values=UserAuth'
   location.href = idredirect;
 }
 

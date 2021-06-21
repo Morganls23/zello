@@ -31,7 +31,11 @@ function initiateLogon() {
     let method = 'GET'
     $.ajax({
       url: url,
-      method: method
+      method: method,
+      dataType: 'json',
+      xhrFields: {
+        withCredentials: true
+      }
     })
     .done(function(data) {
       nextStep(data);

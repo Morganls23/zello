@@ -407,51 +407,14 @@
 
 				// do I already have a session cookie?
 
-			if (Cookies.get('accessToken') && Cookies.get('idToken')) {
-				// yes, user already has a session
-				console.log('id_token (' + Cookies.get('idToken') + ')');
-				console.log('accessToken (' + Cookies.get('accessToken') + ')');
-				window.location.replace(baseUrl+'/index.html');
-
-
-          	} else {
-
-              // missing accessToken or idToken for this individual
-
-              console.log('No existing user session or token found');
-			  // was the user just sent here from p14c?
-			  getUrlParameter();
-              console.log("flowid value: "+flowId);
-              if (flowId) {
-
-                // url has a flowId - so they just arrived from p14c
-
-                console.log('flowId found in url: ' + flowId);
-                console.log('User already bootstrapped through p14c');
-				console.log('Performing p14c ajax query to determine next step');
-				getNextStep(flowId);
-
-              } else {
-
-                // url does not have a flowId.  and we don't have a session.  send them authorizationUrl
-                console.log('No flowId found in url');
-                console.log('CALL initiate logon to p14c to bootstrap session');
-                initiateLogon();
-
-              }
-
-			}
-		})
-
-
 		// 	if (Cookies.get('accessToken') && Cookies.get('idToken')) {
-        //     // yes, user already has a session
-        //     console.log('id_token (' + Cookies.get('idToken') + ')');
-		// 	console.log('accessToken (' + Cookies.get('accessToken') + ')');
-		// 	window.location.replace(baseUrl+'/index.html');
+		// 		// yes, user already has a session
+		// 		console.log('id_token (' + Cookies.get('idToken') + ')');
+		// 		console.log('accessToken (' + Cookies.get('accessToken') + ')');
+		// 		window.location.replace(baseUrl+'/index.html');
 
 
-        //   } else {
+        //   	} else {
 
         //       // missing accessToken or idToken for this individual
 
@@ -472,13 +435,50 @@
 
         //         // url does not have a flowId.  and we don't have a session.  send them authorizationUrl
         //         console.log('No flowId found in url');
-        //         console.log('Redirecting to p14c to bootstrap session');
-        //         //window.location.replace(authorizationUrl);
+        //         console.log('CALL initiate logon to p14c to bootstrap session');
+        //         initiateLogon();
 
         //       }
 
-		//	}
-		//})
+		// 	}
+		// })
+
+
+			if (Cookies.get('accessToken') && Cookies.get('idToken')) {
+            // yes, user already has a session
+            console.log('id_token (' + Cookies.get('idToken') + ')');
+			console.log('accessToken (' + Cookies.get('accessToken') + ')');
+			window.location.replace(baseUrl+'/index.html');
+
+
+          } else {
+
+              // missing accessToken or idToken for this individual
+
+              console.log('No existing user session or token found');
+			  // was the user just sent here from p14c?
+			  getUrlParameter();
+              console.log("flowid value: "+flowId);
+              if (flowId) {
+
+                // url has a flowId - so they just arrived from p14c
+
+                console.log('flowId found in url: ' + flowId);
+                console.log('User already bootstrapped through p14c');
+				console.log('Performing p14c ajax query to determine next step');
+				getNextStep(flowId);
+
+              } else {
+
+                // url does not have a flowId.  and we don't have a session.  send them authorizationUrl
+                console.log('No flowId found in url');
+                console.log('Redirecting to p14c to bootstrap session');
+                //window.location.replace(authorizationUrl);
+
+              }
+
+			}
+		})
 	</script>
 
 	</body>
